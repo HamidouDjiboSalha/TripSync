@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "Nom" %>
+    <%= f.text_field :first_name, autocomplete: "Nom" %>
   </div>
 
   <div class="field">
@@ -36,15 +36,10 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <%# <div class="field">
-    <%= f.label :role, "Rôle" %><br />
-    <%# <%= f.select :role,User.roles.keys.reject { |r| r == "admin" }.map { |r| [r.humanize.capitalize, r] },prompt: "Choisissez un rôle" %>
-<%#   </div> %> 
-
- <div class="field">
+  <div class="field">
     <%= f.label :role %><br />
-    <%= f.select :role, User.roles.keys,prompt: "Choisissez un rôle", autocomplete: "Role" %>
-  </div>
+    <%= f.select :role,User.roles.keys.reject { |r| r == "admin" }.map { |r| [r.humanize.capitalize, r] },prompt: "Choisissez un rôle" %>
+  </div> 
 
   <div class="actions">
     <%= f.submit "Sign up" %>
